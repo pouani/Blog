@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList, Button } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Button, TouchableOpacity } from 'react-native'
 import React, { useContext } from 'react'
 import { Context } from '../context/BlogContext'
 import { Feather } from '@expo/vector-icons'
@@ -16,8 +16,12 @@ const IndexScreen = () => {
         renderItem={({ item }) => {
           return (
             <View style={styles.row}>
-              <Text style={styles.title}>{item.title}</Text>
-              <Feather style={styles.icon} name="trash" />
+              <Text style={styles.title}>
+                {item.title} - {item.id}
+              </Text>
+              <TouchableOpacity onPress={() => console.log(item.id)}>
+                <Feather style={styles.icon} name="trash" />
+              </TouchableOpacity>
             </View>
           )
         }}
