@@ -19,7 +19,7 @@ const CreateScreen = ({ navigation }) => {
       <Text style={styles.label}>Enter Content:</Text>
       <TextInput 
         value={content} 
-        onChangeText={(text) => setTitle(text)}
+        onChangeText={(text) => setContent(text)}
         style={styles.input}
       />
       <Button 
